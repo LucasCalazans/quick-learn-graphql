@@ -1,0 +1,109 @@
+{
+    "name": "graphql-frontned",
+    "version": "1.0.0",
+    "private": true,
+    "main": "index.js",
+    "scripts": {
+        "start": "webpack-dev-server --mode development --port 3100",
+        "help": "webpack-dev-server -h",
+        "build": "webpack --mode production",
+        "build-prod": "webpack --mode production --env production",
+        "build-dev": "webpack --mode development --env development",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage --colors",
+        "storybook": "start-storybook -p 9001 -c .storybook"
+    },
+    "dependencies": {
+        "@babel/polyfill": "^7.0.0",
+        "@babel/runtime": "^7.2.0",
+        "apollo-boost": "^0.4.4",
+        "babel-plugin-syntax-dynamic-import": "^6.18.0",
+        "formik": "^1.4.3",
+        "graphql": "^14.5.8",
+        "graphql-tag": "^2.10.1",
+        "moment": "^2.22.2",
+        "prop-types": "^15.6.2",
+        "react": "^16.8.2",
+        "react-apollo": "^2.4.1",
+        "react-dates": "^20.2.0",
+        "react-dom": "^16.8.2",
+        "react-helmet": "^5.2.0",
+        "react-redux": "^7.1.1",
+        "react-router-dom": "5.1.2",
+        "redux": "^4.0.4",
+        "script-ext-html-webpack-plugin": "^2.1.3",
+        "styled-components": "^4.1.3",
+        "text-mask-addons": "^3.8.0",
+        "xml2json-light": "^1.0.6",
+        "yup": "^0.26.10"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.2.0",
+        "@babel/core": "^7.2.0",
+        "@babel/plugin-proposal-class-properties": "^7.3.0",
+        "@babel/plugin-transform-arrow-functions": "^7.2.0",
+        "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+        "@babel/plugin-transform-runtime": "^7.2.0",
+        "@babel/preset-env": "^7.2.0",
+        "@babel/preset-react": "^7.0.0",
+        "@storybook/react": "^5.0.8",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-eslint": "^10.0.1",
+        "babel-jest": "^23.6.0",
+        "babel-loader": "^8.0.4",
+        "babel-plugin-styled-components": "^1.10.0",
+        "clean-webpack-plugin": "^2.0.1",
+        "copy-webpack-plugin": "^5.0.2",
+        "file-loader": "^1.1.11",
+        "html-loader": "^0.5.5",
+        "html-webpack-plugin": "^3.2.0",
+        "husky": "^1.3.1",
+        "jest": "^23.6.0",
+        "jest-fetch-mock": "^2.1.2",
+        "jest-localstorage-mock": "^2.4.0",
+        "jest-styled-components": "^6.3.1",
+        "prettier": "^1.16.4",
+        "pretty-quick": "^1.10.0",
+        "react-testing-library": "^7.0.1",
+        "uglifyjs-webpack-plugin": "^1.2.5",
+        "webpack": "4.19.1",
+        "webpack-cli": "2.1.4",
+        "webpack-dev-server": "^3.1.14"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    },
+    "jest": {
+        "moduleNameMapper": {
+            "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__tests__/__mocks__/fileMock.js",
+            "\\.(css|less)$": "<rootDir>/__tests__/__mocks__/styleMock.js",
+            "@(/.*)$": "<rootDir>/src/$1",
+            "#(/.*)$": "<rootDir>/__tests__/$1"
+        },
+        "modulePathIgnorePatterns": [
+            "__mocks__",
+            "initial-configuration.js",
+            "setupTests.js",
+            "model/mocks.js"
+        ],
+        "setupFiles": [
+            "./__tests__/initial-configuration.js"
+        ],
+        "setupTestFrameworkScriptFile": "./__tests__/setupTests.js",
+        "transformIgnorePatterns": [
+            "<rootDir>/node_modules/"
+        ],
+        "testMatch": [
+            "**/__tests__/**/*.js?(x)",
+            "**/?(*.)+(spec|test).js?(x)"
+        ],
+        "testPathIgnorePatterns": [
+            "/node_modules/"
+        ],
+        "testEnvironment": "jsdom",
+        "collectCoverage": false
+    }
+}

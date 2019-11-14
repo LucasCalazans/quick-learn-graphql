@@ -1,0 +1,5 @@
+export default {
+    PAGE_TITLE: 'PAGE_TITLE',
+    STORE_CONFIG: 'STORE_CONFIG',
+    SET_CMS_PAGES: 'SET_CMS_PAGES',
+};
