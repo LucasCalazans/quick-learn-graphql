@@ -17,7 +17,7 @@ class Developers {
     }
 
     static parseResponse(response) {
-        return response.allDevelopers;
+        return response.data.allDevelopers;
     }
 }
 

@@ -11,6 +11,6 @@ type developer {
 
 type address {
     street: String!
-    postocode: String!
+    postcode: String!
     country: String!
 }

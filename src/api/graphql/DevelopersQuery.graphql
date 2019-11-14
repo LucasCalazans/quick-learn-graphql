@@ -1,5 +1,10 @@
 query {
     allDevelopers {
         name
+        address {
+            street
+            country
+            postcode
+        }
     }
 }
